@@ -3,13 +3,11 @@ function updateClock() {
     let hours = now.getHours();
     let minutes = now.getMinutes();
     
-    // সময় ফরম্যাট ঠিক করা (সিঙ্গেল ডিজিট হলে ০ বসানো)
     hours = hours < 10 ? '0' + hours : hours;
     minutes = minutes < 10 ? '0' + minutes : minutes;
 
     document.getElementById('time').innerText = hours + ":" + minutes;
 
-    // সপ্তাহের দিন আপডেট করা
     let weekDays = document.querySelectorAll('.weekdays span');
     weekDays.forEach(day => day.classList.remove('active'));
     weekDays[now.getDay()].classList.add('active');
